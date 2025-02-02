@@ -1,0 +1,30 @@
+@media (max-width: 768px) {
+    .greeting {
+        font-size: 32px;
+    }
+
+    .icons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .icons a img {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .greeting {
+        font-size: 24px;
+    }
+
+    .icons a {
+        margin: 10px;
+    }
+
+    .icons a img {
+        height: 36px;
+        width: 36px;
+    }
+}
