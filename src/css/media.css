@@ -1,5 +1,25 @@
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 1024px) {
+    .container-index h1 {
+        font-size: 36px;
+    }
+
+    .icons a img {
+        height: 60px;
+        width: 60px;
+    }
+
+    .cards {
+        width: 90%;
+    }
+
+    .card {
+        padding: 15px;
+    }
+}
+
 @media (max-width: 768px) {
-    .greeting {
+    .container-index h1 {
         font-size: 32px;
     }
 
@@ -8,23 +28,85 @@
         justify-content: center;
     }
 
-    .icons a img {
-        height: 40px;
-        width: 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .greeting {
-        font-size: 24px;
-    }
-
     .icons a {
         margin: 10px;
     }
 
     .icons a img {
-        height: 36px;
-        width: 36px;
+        height: 48px;
+        width: 48px;
+    }
+
+    .cards {
+        width: 95%;
+    }
+
+    .card {
+        padding: 12px;
+    }
+
+    .card-title h2 {
+        font-size: 18px;
+    }
+
+    .footer {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 10px;
+    }
+
+    .navbar a {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .dark-mode-toggle {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin-top: 10px;
+    }
+
+    .container-index {
+        padding-top: 80px;
+    }
+
+    .container-index h1 {
+        font-size: 28px;
+    }
+
+    .icons a img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .cards {
+        width: 100%;
+        padding: 50px 10px;
+    }
+
+    .card {
+        padding: 10px;
+    }
+
+    .card-title h2 {
+        font-size: 16px;
+    }
+
+    .footer {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .hashtag {
+        font-size: 11px;
+        padding: 5px 10px;
     }
 }

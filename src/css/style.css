@@ -3,42 +3,52 @@
     src: url('../fonts/Sansation_Light.ttf') format('truetype');
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Sansation';
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: 'Sansation';
+    color: rgb(56, 128, 58);
     background-color: rgb(244, 244, 249);
+    animation: fadeIn 1s ease-out;
 }
 
-.container {
+.index {
+    height: 100vh;
+}
+
+.container-index {
     text-align: center;
 }
 
-.greeting {
-    color: rgb(56, 128, 58);
+.container-index h1 {
     font-size: 40px;
     font-weight: 400;
-    margin-bottom: 64px;
+    margin-bottom: 40px;
 }
 
+/* Ícones */
 .icons {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
+    animation: fadeIn 1s ease-out;
 }
 
 .icons a {
-    margin-left: 24px;
-    margin-right: 24px;
+    margin: 0 24px;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-decoration: none;
     padding-bottom: 8px;
+    transition: transform 0.3s ease-in-out;
 }
 
 .icons a::after {
@@ -58,8 +68,8 @@ body {
 }
 
 .icons a img {
-    height: 48px;
-    width: 48px;
+    height: 60px;
+    width: 60px;
     padding: 4px;
     margin: 0 10px;
     transition: transform 0.3s ease-in-out;
@@ -67,4 +77,381 @@ body {
 
 .icons a:hover img {
     transform: scale(1.2);
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(244, 244, 249);
+}
+
+.navbar a {
+    display: none;
+    font-size: 24px;
+    color: rgb(56, 128, 58);
+    text-decoration: none;
+    margin-left: 10px;
+    padding-top: 10px;
+}
+
+/* Toggle - Modo Escuro */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-label {
+    width: 50px;
+    height: 25px;
+    background-color: #ddd;
+    border-radius: 25px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.toggle-label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 2.5px;
+    left: 3px;
+    transition: transform 0.3s ease-in-out;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"]:checked+.toggle-label {
+    background-color: #333;
+}
+
+input[type="checkbox"]:checked+.toggle-label::after {
+    transform: translateX(25px);
+}
+
+/* Modo Escuro */
+.dark-mode {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .navbar,
+.dark-mode a,
+.dark-mode .footer {
+    background-color: #1e1e1e;
+}
+
+.dark-mode .card {
+    background-color: #333;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(56, 128, 58);
+    background-color: rgb(244, 244, 249);
+    text-align: center;
+    padding: 10px;
+    font-size: 16px;
+}
+
+/* Cards */
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    margin: 10px 0;
+    padding: 70px 0 60px;
+    overflow-y: auto;
+}
+
+.card {
+    width: 80%;
+    min-height: 200px;
+    padding: 20px;
+    gap: 15px;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: rgb(56, 128, 58);
+    font-weight: normal;
+}
+
+.card p {
+    text-align: justify;
+}
+
+.card-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-title img {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+/* Scrollbar */
+html ::-webkit-scrollbar {
+    width: 10px;
+}
+
+html ::-webkit-scrollbar-thumb {
+    border-radius: 50px;
+    background: rgb(56, 128, 58);
+}
+
+.dark-mode ::-webkit-scrollbar-thumb {
+    background: rgb(100, 200, 100) !important;
+}
+
+.dark-mode ::-webkit-scrollbar-track {
+    background: #1e1e1e !important;
+}
+
+.dark-mode table {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode td {
+    border: 0.5px solid #555;
+}
+
+.dark-mode tr:nth-child(even) {
+    background-color: #444;
+}
+
+.dark-mode tr:hover {
+    background-color: #555;
+}
+
+/* Modo escuro */
+.dark-mode .card.projects {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .card.projects li {
+    background: #444;
+}
+
+.dark-mode .card.projects li:hover {
+    background: #555;
+}
+
+.dark-mode .modal-content {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode .modal h2 {
+    color: rgb(100, 200, 100);
+}
+
+.dark-mode .modal p {
+    color: white;
+}
+
+.dark-mode .modal-close {
+    color: white;
+}
+
+.dark-mode .modal-close:hover {
+    color: red;
+}
+
+.dark-mode #modal-project-link {
+    background-color: rgb(51,51,51);
+    color: white;
+}
+
+/* Hashtags */
+.hashtag {
+    display: inline-block;
+    justify-content: flex-start;
+    background-color: #454545;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 6px 12px;
+    margin: 5px;
+    border-radius: 20px;
+    text-transform: lowercase;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    max-width: fit-content;
+}
+
+.hashtag:hover {
+    background-color: var(--hover-color);
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    overflow: hidden;
+}
+
+td {
+    padding: 6px;
+    border: 0.5px solid #ddd;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+li {
+    font-size: 16px;
+    padding: 8px 12px;
+    background: #f4f4f4;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* listas */
+li::before {
+    content: "📌";
+    font-size: 14px;
+    color: rgb(56, 128, 58);
+}
+
+li:hover {
+    background: #ddd;
+}
+
+/* Modal*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: white;
+    width: 700px;
+    height: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.modal-close:hover {
+    color: red;
+}
+
+.modal-content hr {
+    width: 100%;
+    margin: 10px 10px;
+}
+
+.modal-content h2 {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    height: 20%;
+    color: rgb(56, 128, 58);
+}
+
+.modal-content  {
+    color: black;
+}
+
+.modal-content p {
+    display: flex;
+    align-items: start;
+    text-align: justify;
+    color: black;
+    margin-top: 10px;
+    height: 80%;
+}
+
+/* Estilo do link do GitHub */
+#modal-project-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    margin-top: 15px;
+    transition: color 0.3s ease-in-out;
+}
+
+#modal-project-link img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+#modal-project-link:hover {
+    color: rgb(56, 128, 58);
 }
