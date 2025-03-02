@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <hr>
             <p id="modal-description"></p>
             <a id="modal-project-link" href="#" target="_blank">
-                <img src="../icons/github-logo-thin.svg" alt="GitHub Project">
+                <img src="icons/github-logo-thin.svg" alt="GitHub Project">
                 project
             </a>
         </div>
